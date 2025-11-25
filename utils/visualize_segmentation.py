@@ -9,8 +9,8 @@ import cv2
 import numpy as np
 from PIL import Image
 import face_alignment
-from utils.segmentation import get_mask_from_landmarks, visualize_mask, get_segmented_regions
-from utils.extractor import get_transform_mat, FaceType
+from .segmentation import get_mask_from_landmarks, visualize_mask, get_segmented_regions
+from .extractor import get_transform_mat, FaceType
 from diffusers.utils import load_image
 
 

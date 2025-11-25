@@ -2,10 +2,10 @@ import cv2
 import numpy as np
 from PIL import Image
 import face_alignment
-from utils.extractor import get_transform_mat, FaceType
-from utils.merger import paste_foreground_onto_background
-from utils.segmentation import get_mask_from_landmarks
-from utils.operators import apply_blur, apply_mosaic, apply_diffusion
+from .extractor import get_transform_mat, FaceType
+from .merger import paste_foreground_onto_background
+from .segmentation import get_mask_from_landmarks
+from .operators import apply_blur, apply_mosaic, apply_diffusion
 
 def anonymize_faces_segmented(
     image,
