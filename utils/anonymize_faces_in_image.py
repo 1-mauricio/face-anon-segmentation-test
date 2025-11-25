@@ -2,9 +2,21 @@ import face_alignment
 from PIL import Image
 import torch
 
-from src.diffusers.pipelines.referencenet.pipeline_referencenet import (
-    StableDiffusionReferenceNetPipeline,
-)
+# Import will be resolved based on sys.path configuration
+try:
+    from src.diffusers.pipelines.referencenet.pipeline_referencenet import (
+        StableDiffusionReferenceNetPipeline,
+    )
+except ImportError:
+    # Fallback for when src is not in path
+    import sys
+    from pathlib import Path
+    project_root = Path(__file__).parent.parent
+    if str(project_root) not in sys.path:
+        sys.path.insert(0, str(project_root))
+    from src.diffusers.pipelines.referencenet.pipeline_referencenet import (
+        StableDiffusionReferenceNetPipeline,
+    )
 from .extractor import extract_faces
 from .merger import paste_foreground_onto_background
 
